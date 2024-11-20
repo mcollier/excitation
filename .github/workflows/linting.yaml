@@ -23,10 +23,6 @@ jobs:
         working-directory: client
 
       - name: 'Lint Code'
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
-          eslint_dir: client/
-          prettier_dir: client/
-        
+        run: npx eslint "**/*.{ts,tsx}"
+        working-directory: client
+
