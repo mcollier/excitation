@@ -1,9 +1,8 @@
 name: Continuous Integration
 on:
-  workflow_dispatch: # call from other workflows
-  workflow_call: # manual trigger
+  workflow_dispatch: # manual trigger
+  workflow_call: # call from other workflows
   pull_request: # any PR
-  push:
 
 jobs:
    linting:
