@@ -1,0 +1,25 @@
+name: Linting
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: 'Set up Node.js'
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 'Install Dependencies'
+        run: |
+          npm install
+
+      - name: 'Lint Code'
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
