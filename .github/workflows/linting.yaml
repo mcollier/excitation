@@ -2,6 +2,9 @@ name: Linting
 on:
   workflow_call:
 
+env:
+  NODE_VERSION: "20.x" # set this to the node version to use (supports 8.x, 10.x, 12.x)
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -16,6 +19,7 @@ jobs:
 
       - name: 'Install Dependencies'
         run: |
+          cd client
           npm install
 
       - name: 'Lint Code'
